@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+*{
+	font-family: "VT323", monospace;
+	text-align: center;
+}
+html {
+	background: black;
+}
+body {
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: space-around;
+	justify-content: center;
+	align-items: center;
+}
+header {
+	background-image: url("brain_extended.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: space-around;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100vw;
+	top: 0;
+
+}
+header h3 {
+	font-family: "VT323", monospace;
+	font-weight: bold;
+	font-size: 80px;
+}
+header p {
+	font-size: 20px;
+	font-style: italic;
+}
+header h3,p {
+	color: #f9f9f9;
+	margin: 5px;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40vh;
+	width: 40vh;
+	border-radius: 100%;
+	padding: 10px;
+	background: rgba(64,167,255);
+	box-shadow: 0px 0px 1px rgba(0,0,0, 0.4);
+	z-index: 2;
+}
+footer{
+	padding: 30px;
+	font-size: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	color: grey;
+	position: fixed;
+	bottom: 0;
+	left:0;
+	right:0;
+}
+
+@keyframes effect {
+	0% {
+		transform: scale(0.9,0.9);
+	}
+	25% {
+		transform: scale(1,1);
+	}
+	50% {
+		transform: scale(1.05,1.05);
+	}
+	75% {
+		transform: scale(1,1);
+	}
+	100% {
+		transform: scale(0.9,0.9);
+	}
+}
+
+.startAnim {
+	animation: effectDois 2s infinite;
+}
+
+#back_effect {
+	filter: blur(0);
+	border-radius: 100%;
+	height: 45vh;
+	width: 45vh;
+	position: absolute;
+	background: rgb(0, 255, 255);
+	/*background-image: radial-gradient(blue, yellow 30%, cyan 30%);*/
+	z-index: 1;
+}
+.div_main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.div_main input {
+	font-size:25px;
+	text-align: center;
+	background: #f9f9f9;
+	border-radius: 20px;
+	width: 50%;
+	outline-color: green;
+	border-style: none;
+	margin: 10px;
+}
+
+#chute_btn, #restart {
+	font-size:25px;
+	border-radius: 20px;
+	width: 50%;
+	border-style: none;
+}
+.div_main small {
+	font-size: 25px;
+	color: #f9f9f9;
+}
+
+.div_main b {
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+	padding: 10px;
+}
+.erro{
+	color: red;
+}

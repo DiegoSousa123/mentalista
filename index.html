@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mentalista</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<header>
+		<h3>MENTALISTA</h3>
+		<p>
+			Adivinhe o número. Se conseguir...
+		</p>
+	</header>
+
+	<div id="back_effect">
+	</div>
+	<section>
+
+		<div class="div_main">
+			<b style="color:#f9f9f9;">Números de 1 a 1000</b>
+			<div id="n_tentativa"></div>
+			<div><b id="resultado"></b></div>
+			<div id="maior_menor"></div>
+			<input placeholder="1 a 1000" id="input_n" type="number">
+			<button type="button" id="chute_btn" onclick="chute()">Chute!</button>
+		</br><button disabled type="button" id="restart" onclick="restart()">Recomeçar</button>
+		</div>
+	</section>
+</body>
+<footer>
+	<small>©Diêgo Sousa</small>
+	<small>Alura-ImersãoDev•2023</small>
+</footer>
+<script src="script.js"></script>
+</html>
