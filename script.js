@@ -12,6 +12,7 @@ var nTentativa = 0
 var padraoEffect = "rgb(0,255,255)"
 var errouEffect = "rgb(255,10,10)"
 var acertouEffect = "rgb(15,225,96)"
+var acertouDePrimeira = "rgb(228,158,0)"
 
 document.getElementById("n_tentativa").innerHTML = '<small>Tentativas: ' + nTentativa + '</small>'
 document.getElementById("back_effect").style.animation = "effect 1.5s linear infinite"
@@ -26,14 +27,32 @@ function chute() {
 	var maiorMenor = document.getElementById("maior_menor");
 
 	if (iValue > 0) {
-		if (iValue == randNum) {
-			document.getElementById("resultado").style.color = "rgb(15,225,96)"
-			document.getElementById("resultado").style.opacity = "1"
-			result.innerHTML = 'ACERTOU';		
-			blockInputs(true);
-			maiorMenor.innerHTML = ""
+		if(iValue > 1000){
+			result.innerHTML = "números de 1 a <ins>1000</ins>";
+			document.getElementById("resultado").style.opacity = "1";
+			document.getElementById("resultado").style.color = "#f9f9f9";
+			document.getElementById("input_n").value = "";
+			setTimeout(funtion(){
+				result.innerHTML = "";
+				}, 1500);
+		}
+		else if (iValue == randNum) {
+			if(nTentativa == 0){
+			document.getElementById("resultado").style.color = acertouDePrimeira;		
+		        document.getElementById("back_effect").style.background = acertouDePrimeira;
+			result.innerHTML = 'LENDÁRIO!';	
+			maiorMenor.innerHTML = "<small>acertou de primeira!</small>"; 
+				
+			}else{
+			document.getElementById("resultado").style.color = "rgb(15,225,96)"		
+			result.innerHTML = 'ACERTOU';
 			document.getElementById("back_effect").style.background = acertouEffect
-
+			}
+			
+			blockInputs(true);
+			document.getElementById("resultado").style.opacity = "1"
+			maiorMenor.innerHTML = ""
+			
 		} else if (iValue != randNum) {
 			++nTentativa
 			document.getElementById("n_tentativa").innerHTML = '<small>Tentativas: ' + nTentativa + '</small>'
