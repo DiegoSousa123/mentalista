@@ -122,12 +122,15 @@ footer{
 	border-style: none;
 	margin: 10px;
 }
-
+input:invalid{
+        background:red;
+}
 #chute_btn, #restart {
 	font-size:25px;
 	border-radius: 20px;
 	width: 50%;
 	border-style: none;
+	margin: 1%;
 }
 .div_main small {
 	font-size: 25px;
