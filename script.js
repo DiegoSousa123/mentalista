@@ -32,7 +32,7 @@ function chute() {
 			document.getElementById("resultado").style.opacity = "1";
 			document.getElementById("resultado").style.color = "#f9f9f9";
 			document.getElementById("input_n").value = "";
-			setTimeout(funtion(){
+			setTimeout(function(){
 				result.innerHTML = "";
 				}, 1500);
 		}
