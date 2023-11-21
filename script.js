@@ -41,10 +41,8 @@ function chute() {
             if (nTentativa == 0) {
                 //acertou na primeira tentativa
                 result.innerHTML = "LENDÁRIO!";
-                document.getElementById("back_effect").style.background =
-                    acertouDePrima;
-                document.getElementById("resultado").style.color =
-                    acertouDePrima;
+                document.getElementById("back_effect").style.background = acertouDePrima;
+                document.getElementById("resultado").style.color = acertouDePrima;
                 maiorMenor.innerHTML = "<small>acertou de primeira!</small>";
             } else {
                 document.getElementById("back_effect").style.background =
@@ -68,7 +66,7 @@ function chute() {
                 errouEffect;
 
             setTimeout(function () {
-                if (nTentativa == 2) {
+                if (nTentativa == 10) {
                     result.innerHTML = "<b>Tentativas esgotadas!</b>";
                     document.getElementById("resultado").style.opacity = "1";
                     blockInputs(true);
