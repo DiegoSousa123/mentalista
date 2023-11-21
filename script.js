@@ -4,7 +4,7 @@ releve os erros bobos que podem haver.
 E sim, está uma bagunça!
 */
 
-var randNum = parseInt(Math.random() * 1);
+var randNum = parseInt(Math.random() * 1001 + 1);
 var res
 var iValue
 var nTentativa = 0
