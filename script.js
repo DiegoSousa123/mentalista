@@ -8,7 +8,7 @@ var randNum = parseInt(Math.random() * 1001 + 1);
 var res
 var iValue
 var nTentativa = 0
-var state = false
+/*var state = false*/
 var padraoEffect = "rgb(0,255,255)"
 var errouEffect = "rgb(255,10,10)"
 var acertouEffect = "rgb(15,225,96)"
@@ -20,7 +20,7 @@ document.getElementById("resultado").style.opacity = "0"
 console.log(randNum);
 
 function chute() {
-	iValue = document.getElementById("input_n").value;
+	iValue = parseInt(document.getElementById("input_n").value);
 	var result = document.getElementById("resultado");
 	var tentativa = document.getElementById("n_tentativa")
 	var maiorMenor = document.getElementById("maior_menor");
@@ -29,9 +29,8 @@ function chute() {
 		if (iValue == randNum) {
 			document.getElementById("resultado").style.color = "rgb(15,225,96)"
 			document.getElementById("resultado").style.opacity = "1"
-			result.innerHTML = 'ACERTOU'
-			state = true
-			blockInputs();
+			result.innerHTML = 'ACERTOU';		
+			blockInputs(true);
 			maiorMenor.innerHTML = ""
 			document.getElementById("back_effect").style.background = acertouEffect
 
@@ -40,6 +39,7 @@ function chute() {
 			document.getElementById("n_tentativa").innerHTML = '<small>Tentativas: ' + nTentativa + '</small>'
 			document.getElementById("resultado").style.opacity = "1"
 			result.innerHTML = 'ERROU';
+			document.getElementById("input_n").disabled = true;
 			document.getElementById("resultado").style.color = "red"
 			document.getElementById("chute_btn").disabled = true
 			document.getElementById("back_effect").style.background = errouEffect
@@ -48,13 +48,13 @@ function chute() {
 
 				if (nTentativa == 10) {
 					result.innerHTML = '<b>Tentativas esgotadas!</b>'
-					document.getElementById("resultado").style.opacity = "1"
-					state = true
-					blockInputs()
+					document.getElementById("resultado").style.opacity = "1";					
+					blockInputs(true)
 					maiorMenor.innerHTML = "<small>O número era: " + randNum + "</small>"
 				} else {
 					result.innerHTML = '';
-					document.getElementById("input_n").value = ""
+					document.getElementById("input_n").value = ""; 
+                                        document.getElementById("input_n").disabled = false;
 					maiorMenor.innerHTML = ''
 					document.getElementById("resultado").style.opacity = "0"
 					document.getElementById("chute_btn").disabled = false
@@ -62,7 +62,7 @@ function chute() {
 
 				}
 			},
-				4000)
+				2000)
 
 			if (iValue > randNum) {
 				maiorMenor.innerHTML = '<small>É menor...</small>'
@@ -74,7 +74,7 @@ function chute() {
 	}
 }
 
-function blockInputs() {
+function blockInputs(state) {
 	if (state == true) {
 		document.getElementById("input_n").disabled = true
 		document.getElementById("chute_btn").disabled = true
