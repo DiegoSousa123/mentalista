@@ -24,7 +24,11 @@
 			<div id="n_tentativa"></div>
 			<div><b id="resultado"></b></div>
 			<div id="maior_menor"></div>
-			<input placeholder="1 a 1000" id="input_n" type="number">
+			<input placeholder="1 a 1000" 
+				id="input_n" 
+				type="text"
+				inputmode="numeric"
+				pattern="[0-9]{1,4}">
 			<button type="button" id="chute_btn" onclick="chute()">Chute!</button>
 		</br><button disabled type="button" id="restart" onclick="restart()">Recomeçar</button>
 		</div>
