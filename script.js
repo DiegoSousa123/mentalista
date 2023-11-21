@@ -37,17 +37,16 @@ function chute() {
 				}, 1500);
 		}
 		else if (iValue == randNum) {
-			if(nTentativa == 0){
+			/*if(nTentativa == 0){
 			document.getElementById("resultado").style.color = acertouDePrimeira;		
 		        document.getElementById("back_effect").style.background = acertouDePrimeira;
 			result.innerHTML = 'LENDÁRIO!';	
 			maiorMenor.innerHTML = "<small>acertou de primeira!</small>"; 
 				
-			}else{
+			}*/
 			document.getElementById("resultado").style.color = "rgb(15,225,96)"		
 			result.innerHTML = 'ACERTOU';
 			document.getElementById("back_effect").style.background = acertouEffect
-			}
 			
 			blockInputs(true);
 			document.getElementById("resultado").style.opacity = "1"
