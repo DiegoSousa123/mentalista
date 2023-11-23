@@ -22,6 +22,13 @@ document.getElementById("resultado").style.opacity = "0";
 
 console.log(randNum);
 
+var objAudio = document.createElement("audio");
+obj.setAttribute("preload","auto");
+obj.setAttribute("controls","none");
+obj.setAttribute("hidden", "false");
+document.body.appendChild(obj);
+
+
 function chute() {
     iValue = parseInt(document.getElementById("input_n").value);
     var result = document.getElementById("resultado");
@@ -132,9 +139,13 @@ function restart() {
 
 //função para tocar o audio relacionado a condição.
 function toque(condicao){
+	objAudio.volume = 0.8;
 	if(condicao === "acertou"){
-		
+		objAudio.src = "win.mp3";
 	}else{
-		
+		objAudio.volume = 0.3;
+		objAudio.src = "fail.wav";
 	}
+	objAudio.load();
+	objAudio.play();
 }
