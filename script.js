@@ -129,3 +129,12 @@ function restart() {
 
     rand();
 }
+
+//função para tocar o audio relacionado a condição.
+function toque(condicao){
+	if(condicao === "acertou"){
+		
+	}else{
+		
+	}
+}
