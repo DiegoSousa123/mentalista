@@ -112,7 +112,7 @@ footer{
 	align-items: center;
 }
 
-.div_main input {
+.user_input{
 	font-size:25px;
 	text-align: center;
 	background: #f9f9f9;
@@ -122,7 +122,6 @@ footer{
 	border-style: none;
 	margin: 10px;
 }
-
 @keyframes empty{
 	0%{transform: translateX(-10%);
 			background: var(--cor_erro_input);
