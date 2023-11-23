@@ -152,6 +152,10 @@ input:invalid{
 	border-style: none;
 	margin: 1%;
 	font-family: "VT323", monospace;
+	transition: transform 0.1s;
+}
+#chute_btn:hover, #restart:hover{
+	transform: scale(1.1,1.1);
 }
 .div_main small {
 	font-size: 25px;
