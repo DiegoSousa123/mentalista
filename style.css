@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-
+:root{
+	--cor_erro_input: red;
+}
 *{
 	font-family: "VT323", monospace;
 	text-align: center;
@@ -122,6 +124,22 @@ footer{
 	border-style: none;
 	margin: 10px;
 }
+
+@keyframes empty{
+	0%{transform: translateX(-10%);
+			background: var(--cor_erro_input);
+	}
+	50%{transform: translateX(0%);
+			background: var(--cor_erro_input);
+	}
+	100%{transform: translateX(10%);
+			background: var(--cor_erro_input);
+	}
+}
+.emptyUserInput{
+	animation: empty 0.09s linear alternate;
+}
+
 input:invalid{
         background:red;
 }
