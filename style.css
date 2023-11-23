@@ -146,3 +146,9 @@ input:invalid{
 .erro{
 	color: red;
 }
+a{
+	text-decoration: none;
+	transition: color 0.7s;
+}
+a:link, a:active, a:visited{color: grey;}
+a:hover{color: red;}
