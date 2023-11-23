@@ -103,7 +103,7 @@ footer p{
 	height: 45vh;
 	width: 45vh;
 	position: absolute;
-	background: mediumblue;
+	background: rgb(0,0,205);
 	/*background-image: radial-gradient(blue, yellow 30%, cyan 30%);*/
 	z-index: 1;
 }
