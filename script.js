@@ -9,10 +9,10 @@ var res;
 var iValue;
 var nTentativa = 0;
 /*var state = false;*/
-var padraoEffect = "rgb(0,255,255)";
+var padraoEffect = "rgb(0,0,205)";
 var errouEffect = "rgb(255,10,10)";
 var acertouEffect = "rgb(15,225,96)";
-var acertouDePrima = "rgb(228, 158, 0)";
+var acertouDePrima = "rgb(255, 164, 33)";
 
 document.getElementById("n_tentativa").innerHTML =
     "<small>Tentativas: " + nTentativa + "</small>";
