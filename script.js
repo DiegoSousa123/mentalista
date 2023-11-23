@@ -60,6 +60,7 @@ function chute() {
                     "rgb(15,225,96)";
                 result.innerHTML = "ACERTOU";
             }
+            toque("acertou");
             document.getElementById("resultado").style.opacity = "1";
             blockInputs(true);
         } else if (iValue != randNum) {
@@ -68,6 +69,7 @@ function chute() {
                 "<small>Tentativas: " + nTentativa + "</small>";
             document.getElementById("resultado").style.opacity = "1";
             result.innerHTML = "ERROU";
+            toque("errou");
             document.getElementById("input_n").disabled = true;
             document.getElementById("resultado").style.color = "red";
             document.getElementById("chute_btn").disabled = true;
