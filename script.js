@@ -23,10 +23,10 @@ document.getElementById("resultado").style.opacity = "0";
 console.log(randNum);
 
 var objAudio = document.createElement("audio");
-obj.setAttribute("preload","auto");
-obj.setAttribute("controls","none");
-obj.setAttribute("hidden", "true");
-document.body.appendChild(obj);
+objAudio.setAttribute("preload","auto");
+objAudio.setAttribute("controls","none");
+objAudio.setAttribute("hidden", "true");
+document.body.appendChild(objAudio);
 
 
 function chute() {
