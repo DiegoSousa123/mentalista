@@ -41,8 +41,10 @@ function chute() {
             if (nTentativa == 0) {
                 //acertou na primeira tentativa
                 result.innerHTML = "LENDÁRIO!";
-                document.getElementById("back_effect").style.background = acertouDePrima;
-                document.getElementById("resultado").style.color = acertouDePrima;
+                document.getElementById("back_effect").style.background =
+                    acertouDePrima;
+                document.getElementById("resultado").style.color =
+                    acertouDePrima;
                 maiorMenor.innerHTML = "<small>acertou de primeira!</small>";
             } else {
                 document.getElementById("back_effect").style.background =
@@ -85,16 +87,18 @@ function chute() {
             }, 2000);
 
             if (iValue > randNum) {
-                maiorMenor.innerHTML = "<small>É menor...</small>";
+                maiorMenor.innerHTML = "<small>é menor...</small>";
             }
             if (iValue < randNum) {
-                maiorMenor.innerHTML = "<small>É maior...</small>";
+                maiorMenor.innerHTML = "<small>é maior...</small>";
             }
+        }
     }else{
-    	var inputBox = document.getElementById("input_n").classList.toggle("emptyUserInput");
-    	setTimeout(function(){
-    		inputBox.classList.toggle("emptyUserInput");
-    	}, 700);
+						var inputBox = document.getElementById("input_n");
+            inputBox.classList.toggle("emptyUserInput");
+            setTimeout(function(){
+            	inputBox.classList.toggle("emptyUserInput");
+            }, 700);
     }
 }
 
