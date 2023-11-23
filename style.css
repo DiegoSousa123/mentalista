@@ -4,12 +4,10 @@
 :root{
 	--cor_erro_input: red;
 }
-*{
-	font-family: "VT323", monospace;
-	text-align: center;
-}
 html {
 	background: black;
+	font-family: "VT323", monospace;
+	text-align: center;
 }
 body {
 	padding: 0;
@@ -149,6 +147,7 @@ input:invalid{
 	width: 50%;
 	border-style: none;
 	margin: 1%;
+	font-family: "VT323", monospace;
 }
 .div_main small {
 	font-size: 25px;
