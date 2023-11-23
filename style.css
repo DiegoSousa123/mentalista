@@ -17,6 +17,8 @@ body {
 	flex-wrap: space-around;
 	justify-content: center;
 	align-items: center;
+	margin:0;
+	position: relative;
 }
 header {
 	background-image: url("brain_extended.jpg");
@@ -68,8 +70,7 @@ footer{
 	color: grey;
 	position: fixed;
 	bottom: 0;
-	left:0;
-	right:0;
+	margin-top: auto;
 }
 
 @keyframes effect {
