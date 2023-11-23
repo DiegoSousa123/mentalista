@@ -90,7 +90,11 @@ function chute() {
             if (iValue < randNum) {
                 maiorMenor.innerHTML = "<small>É maior...</small>";
             }
-        }
+    }else{
+    	var inputBox = document.getElementById("input_n").classList.toggle("emptyUserInput");
+    	setTimeout(function(){
+    		inputBox.classList.toggle("emptyUserInput");
+    	}, 700);
     }
 }
 
