@@ -63,13 +63,17 @@ footer{
 	padding: 30px;
 	font-size: 30px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	color: grey;
 	position: fixed;
 	bottom: 0;
 	margin-top: auto;
+}
+footer p{
+	font-size: 0.5em;
+	color:grey;
 }
 
 @keyframes effect {
@@ -81,6 +85,7 @@ footer{
 	}
 	50% {
 		transform: scale(1.05,1.05);
+		filter: blur(20px) brightness(150%);
 	}
 	75% {
 		transform: scale(1,1);
@@ -100,7 +105,7 @@ footer{
 	height: 45vh;
 	width: 45vh;
 	position: absolute;
-	background: rgb(0, 255, 255);
+	background: mediumblue;
 	/*background-image: radial-gradient(blue, yellow 30%, cyan 30%);*/
 	z-index: 1;
 }
