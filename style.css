@@ -21,7 +21,6 @@ body {
 	position: relative;
 }
 header {
-	background-image: url("brain_extended.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
