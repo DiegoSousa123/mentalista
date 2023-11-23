@@ -104,6 +104,7 @@ footer p{
 	width: 45vh;
 	position: absolute;
 	background: rgb(0,0,205);
+	transition: all 0.5s;
 	/*background-image: radial-gradient(blue, yellow 30%, cyan 30%);*/
 	z-index: 1;
 }
