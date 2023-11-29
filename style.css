@@ -313,11 +313,21 @@ a:hover {
 		font-size: 2em;
 	}
 }
+@media (min-width: 1400px) and (max-width: 1440px){
+	section{
+		width: 50vh;
+		height: 50vh;
+	}
+	#back_effect{
+		width: 55vh;
+		height: 55vh;
+	}
+}
 @media(min-width: 1440px){
 	#chute_btn, #restart, 
 	.div_main small, .div_main b,
 	.user_input{
-		font-size: 2.60rem;
+		font-size: 2rem;
 	}
 	#chute_btn, #restart, .user_input{
 		width: 40%;
