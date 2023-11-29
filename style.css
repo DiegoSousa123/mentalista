@@ -1,13 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/*
+	Desenvolvido para fins de estudo.
+	Erros podem ter sido cometidos, o
+	aprendizado é um longo caminho.
+*/
 
-:root{
+@import url("https://fonts.googleapis.com/css2?family=Monofett&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
 	--cor_erro_input: red;
+	--cor_padrao: rgb(0,0,205);
+	--cor_errou: rgb(255,10,10);
+	--cor_acertou: rgb(15,225,96);
+	--cor_lendario: rgb(255, 164, 33);
+	/*--cor_lendario: gold;*/
+	--cor_branca: ivory;
+	--section_cor: rgb(20, 20, 20);
 }
+
 html {
-	background: black;
+	background: rgb(15, 15, 15);
 	font-family: "VT323", monospace;
 	text-align: center;
+	font-size: 1em;
 }
 body {
 	padding: 0;
@@ -16,8 +31,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin:0;
 	position: relative;
+	margin: 0;
 }
 header {
 	background-size: contain;
@@ -30,19 +45,20 @@ header {
 	position: absolute;
 	width: 100vw;
 	top: 0;
-
 }
-header h3 {
-	font-family: "VT323", monospace;
+header h1 {
 	font-weight: bold;
 	font-size: 80px;
 }
-header p {
+header h2 {
 	font-size: 20px;
 	font-style: italic;
 }
-header h3,p {
-	color: #f9f9f9;
+header h1,
+h2 {
+	user-select: none;
+	/*color: #f9f9f9;*/
+	color: var(--cor_branca);
 	margin: 5px;
 }
 section {
@@ -53,127 +69,257 @@ section {
 	width: 40vh;
 	border-radius: 100%;
 	padding: 10px;
-	background: rgb(20,20,20);
-	box-shadow: 0 0 1px rgba(0,0,0, 0.4);
+	background: var(--section_cor);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 	z-index: 2;
 }
-footer{
-	padding: 30px;
-	font-size: 30px;
+.section__chutes{
+	background: lightblue;
+	box-sizing: border-box;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	margin:0;
+	position: absolute;
+	bottom: 5%;
+	border-radius: 10px;
+	height: 10%;
+	width: 80%;
+	padding: 0.20em; 
+}
+.section__chutes__title{
+	text-transform: uppercase;
+	width: 100%;
+	margin: 0;
+}
+.section__chutes__chutes{
+	width: 100%;
+	line-height: 1.5;
+	margin: 0;
+	font-weight: 500;
+	font-size: 1.30em;
+}
+footer {
+	padding: 0.2em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	color: grey;
 	position: fixed;
-	bottom: 0;
 	margin-top: auto;
+	bottom: 0;
 }
-footer p{
+footer p {
+	line-height: 0.5;
 	font-size: 0.5em;
-	color:grey;
+	color: grey;
 }
-
 @keyframes effect {
 	0% {
-		transform: scale(0.9,0.9);
+		transform: scale(0.9, 0.9);
 	}
 	25% {
-		transform: scale(1,1);
+		transform: scale(1, 1);
 	}
 	50% {
-		transform: scale(1.05,1.05);
-		filter: blur(20px) brightness(150%);
+		transform: scale(1.05, 1.05);
+		filter: blur(15px) brightness(150%);
 	}
 	75% {
-		transform: scale(1,1);
+		transform: scale(1, 1);
 	}
 	100% {
-		transform: scale(0.9,0.9);
+		transform: scale(0.9, 0.9);
 	}
 }
-
 .startAnim {
 	animation: effectDois 2s infinite;
 }
-
 #back_effect {
-	filter: blur(0);
 	border-radius: 100%;
 	height: 45vh;
 	width: 45vh;
 	position: absolute;
-	background: rgb(0,0,205);
+	background: var(--cor_padrao);
 	transition: all 0.5s;
-	/*background-image: radial-gradient(blue, yellow 30%, cyan 30%);*/
 	z-index: 1;
 }
 .div_main {
+	color: var(--cor_branca);
 	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	user-select: none;
 }
-
-.user_input{
-	font-size:25px;
-	font-family: 'VT323', monospace;
+#n_tentativa,
+#n_resultado,
+#maior_menor {
+	width: 100%;
+}
+.user_input {
+	color: black;
 	text-align: center;
-	background: #f9f9f9;
+	background: var(--cor_branca);
 	border-radius: 20px;
 	width: 50%;
 	outline-color: green;
 	border-style: none;
 	margin: 10px;
+	font-family: "VT323", monospace;
+	transition:
+		background 0.09s,
+		transform 0.09s;
 }
-@keyframes empty{
-	0%{transform: translateX(-10%);
-			background: var(--cor_erro_input);
+@keyframes empty {
+	0% {
+		transform: translateX(-10%);
+		background: var(--cor_erro_input);
 	}
-	50%{transform: translateX(0%);
-			background: var(--cor_erro_input);
+	50% {
+		transform: translateX(0%);
+		background: var(--cor_erro_input);
 	}
-	100%{transform: translateX(10%);
-			background: var(--cor_erro_input);
+	100% {
+		transform: translateX(10%);
+		background: var(--cor_erro_input);
 	}
-}
-.emptyUserInput{
-	animation: empty 0.09s linear alternate;
 }
 
-input:invalid{
-        background:red;
+.emptyUserInput {
+	animation: empty 0.09s linear alternate;
 }
-#chute_btn, #restart {
-	font-size:25px;
+#chute_btn, #restart{
+	background: var(--cor_branca);
+}
+#chute_btn,
+#restart,
+.user_input,
+.div_main small,
+.div_main b {
+	text-transform: uppercase;
+	font-size: 25px;
 	border-radius: 20px;
-	width: 50%;
+	width: 8rem;
 	border-style: none;
 	margin: 1%;
 	font-family: "VT323", monospace;
-	transition: transform 0.1s;
+	transition: filter 0.1s;
 }
-#chute_btn:hover, #restart:hover{
-	transform: scale(1.1,1.1);
+/*#chute_btn:hover,
+#restart:hover {
+	filter: brightness(70%);
+}*/
+#chute_btn:active, #restart:active{
+	transform: scale(0.9,0.9);
 }
 .div_main small {
-	font-size: 25px;
-	color: #f9f9f9;
+	width: 100%;
+	transition: all 0.3s;
 }
-
 .div_main b {
 	width: 100%;
 	text-align: center;
-	font-size: 30px;
 	padding: 10px;
+	transition: all 0.3s;
 }
-.erro{
+.erro {
 	color: red;
 }
-a{
+input:invalid {
+	background: red;
+}
+a {
 	text-decoration: none;
 	transition: color 0.7s;
 }
-a:link, a:active, a:visited{color: grey;}
-a:hover{color: red;}
+a:link,
+a:active,
+a:visited {
+	color: grey;
+}
+a:hover {
+	color: red;
+}
+
+@media(max-width: 320px){
+	#chute_btn, #restart, 
+	.div_main small, .div_main b,
+	.user_input{
+		font-size: 1em;
+	}
+	#chute_btn, #restart, .user_input{
+		width: 6em;
+	}
+}
+@media (max-width: 390px) {
+	header h1 {
+		font-size: 4em;
+	}
+	header h2 {
+		font-size: 1em;
+	}
+}
+@media (min-width: 393px) and (max-width: 480px) {
+	header h1 {
+		font-size: 5em;
+	}
+	header h2 {
+		font-size: 1.4em;
+	}
+}
+@media (min-width: 490px) {
+	header h1 {
+		font-size: 10em;
+	}
+	header h2 {
+		font-size: 2em;
+	}
+}
+@media (min-width: 1024px) {
+	header h1 {
+		font-size: 6em;
+	}
+	header h2 {
+		margin-top: -0.5em;
+	}
+
+	footer {
+		flex-flow: row wrap;
+		font-size: 2.8rem;
+		box-sizing: border-box;
+		justify-content: space-around;
+		gap: 2% 0;
+		text-transform: lowercase;
+	}
+	footer small {
+		width: 50%;
+	}
+	footer p {
+		line-height: 1.5;
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+@media (min-width: 1280px) and (max-width: 1400px){
+	header h2 {
+		margin-top: -0.3em;
+	}
+	footer {
+		font-size: 2em;
+	}
+}
+@media(min-width: 1440px){
+	#chute_btn, #restart, 
+	.div_main small, .div_main b,
+	.user_input{
+		font-size: 2.60rem;
+	}
+	#chute_btn, #restart, .user_input{
+		width: 40%;
+	}
+}
