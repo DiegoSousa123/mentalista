@@ -35,7 +35,7 @@ function chute() {
 
 	if (iValue > 0) {//verifica se o valor é maior que 0
 		if (iValue > 1000) {//verifica se o valor é maior que 1000
-			result.innerHTML = "números de 1 a <ins>1000</ins>";
+			result.innerHTML = "1 a <ins>1000</ins>";
 			document.getElementById("resultado").style.opacity = "1";
 			document.getElementById("resultado").style.color = "#f9f9f9";
 			document.getElementById("input_n").value = "";
