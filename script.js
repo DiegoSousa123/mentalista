@@ -15,7 +15,7 @@ var errouEffect = getComputedStyle(root).getPropertyValue("--cor_errou");
 var acertouEffect = getComputedStyle(root).getPropertyValue("--cor_acertou");
 var acertouDePrima = getComputedStyle(root).getPropertyValue("--cor_lendario");
 
-document.getElementById("n_tentativa").innerHTML = "<small>Tentativas: " + nTentativa + "</small>";
+document.getElementById("tentativa").textContent = "Tentativas: " + nTentativa;
 document.getElementById("back_effect").style.animation = "effect 1.5s linear infinite";
 document.getElementById("resultado").style.opacity = "0";
 
@@ -30,30 +30,30 @@ rand();
 function chute() {
 	iValue = parseInt(document.getElementById("input_n").value);
 	var result = document.getElementById("resultado");
-	var tentativa = document.getElementById("n_tentativa");
-	var maiorMenor = document.getElementById("maior_menor");
+	var tentativa = document.getElementById("tentativa");
+	var maiorMenor = document.getElementById("menmai");
 
 	if (iValue > 0) {//verifica se o valor é maior que 0
 		if (iValue > 1000) {//verifica se o valor é maior que 1000
-			result.innerHTML = "1 a <ins>1000</ins>";
+			result.textContent = "1 a 1000";
 			document.getElementById("resultado").style.opacity = "1";
 			document.getElementById("resultado").style.color = "#f9f9f9";
 			document.getElementById("input_n").value = "";
 			setTimeout(function () {
-				result.innerHTML = "";
+				result.textContent = "";
 			}, 1500);
 		} else if (iValue == randNum) { //verifica se o valor é igual ao numero aleatorio
 			if (nTentativa == 0) {
 				//acertou na primeira tentativa
-				result.innerHTML = "LENDÁRIO!";
+				result.textContent = "LENDÁRIO!";
 				document.getElementById("back_effect").style.background = acertouDePrima;
 				document.getElementById("resultado").style.color = acertouDePrima;
-				maiorMenor.innerHTML = "<small>acertou de primeira!</small>";
+				maiorMenor.textContent = "acertou de primeira!";
 			} else {
 				//acertou
 				document.getElementById("back_effect").style.background = acertouEffect;
 				document.getElementById("resultado").style.color = acertouEffect;
-				result.innerHTML = "ACERTOU";
+				result.textContent = "ACERTOU";
 			}
 			toque("acertou"); //realiza o toque de acerto
 			document.getElementById("resultado").style.opacity = "1";
@@ -61,10 +61,10 @@ function chute() {
 		} else if (iValue != randNum) { //verifica se o valor é diferente (errou)
 			++nTentativa; //incrementa o contador de tentativas
 			// saveChute(iValue); //salvar e exibir chute
-			document.getElementById("n_tentativa").innerHTML =
-				"<small>Tentativas: " + nTentativa + "</small>";
+			document.getElementById("tentativa").textContent =
+				"Tentativas: " + nTentativa;
 			document.getElementById("resultado").style.opacity = "1";
-			result.innerHTML = "ERROU";
+			result.textContent = "ERROU";
 			document.getElementById("input_n").disabled = true;
 			document.getElementById("resultado").style.color = errouEffect;
 			toque("errou");//realiza o toque de errou
@@ -73,16 +73,16 @@ function chute() {
 
 			setTimeout(function () {
 				if (nTentativa == 10) {//verifica se as tentativas atingiram o limite
-					result.innerHTML = "<b>tentativas esgotadas!</b>";
+					result.textContent= "tentativas esgotadas!";
 					document.getElementById("input_n").value = "";
 					document.getElementById("resultado").style.opacity = "1";
 					blockInputs(true);
-					maiorMenor.innerHTML = "<small>o número era: " + randNum + "</small>";
+					maiorMenor.textContent = "o número era: " + randNum;
 				} else {
-					result.innerHTML = "";
+					result.textContent = "";
 					document.getElementById("input_n").value = "";
 					document.getElementById("input_n").disabled = false;
-					maiorMenor.innerHTML = "";
+					maiorMenor.textContent = "";
 					document.getElementById("resultado").style.opacity = "0";
 					document.getElementById("chute_btn").disabled = false;
 					document.getElementById("back_effect").style.background = padraoEffect;
@@ -90,10 +90,10 @@ function chute() {
 			}, 2000);
 
 			if (iValue > randNum) {
-				maiorMenor.innerHTML = "<small>é menor...</small>";
+				maiorMenor.textContent = "é menor...";
 			}
 			if (iValue < randNum) {
-				maiorMenor.innerHTML = "<small>é maior...</small>";
+				maiorMenor.textContent = "é maior...";
 			}
 		}
 	} else {//valor menor ou igual a zero 
@@ -123,11 +123,11 @@ function rand() {//função para gerar o numero aleatorio
 function restart() {//função para reiniciar
 	nTentativa = 0;
 	document.getElementById("input_n").value = "";
-	document.getElementById("resultado").innerHTML = "";
+	document.getElementById("resultado").textContent = "";
 	document.getElementById("resultado").style.opacity = "0";
-	document.getElementById("n_tentativa").innerHTML =
-		"<small>Tentativas: " + nTentativa + "</small>";
-	document.getElementById("maior_menor").innerHTML = "";
+	document.getElementById("tentativa").textContent =
+		"Tentativas: " + nTentativa;
+	document.getElementById("menmai").textContent = "";
 	document.getElementById("input_n").disabled = false;
 	document.getElementById("chute_btn").disabled = false;
 	document.getElementById("restart").disabled = true;
